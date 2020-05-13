@@ -1,19 +1,20 @@
 import React from 'react'
 import * as actionTypes from '../store/constants';
 import { connect } from 'react-redux';
+import './NoteForm.css';
 
 function NoteForm(props) {
-
   return (
     <form action="#" id="notes-form">
-      <label htmlFor="note-title">Title: </label>
+      <label htmlFor="note-title">Title: </label><br/>
       <input
         type="text" 
         id="note-title" 
         onChange={(e) => props.onTitleChange(e.target.value)} 
+        className="form__input"
       />
       <br/>
-      <label htmlFor="note-content">Content: </label>
+      <label htmlFor="note-content">Content: </label><br/>
       <textarea 
         name="note-content" 
         id="note-content" 
@@ -21,11 +22,12 @@ function NoteForm(props) {
         rows="10"
         required
         onChange={(e) => props.onContentChange(e.target.value)}
+        className="form__input"
         >
       </textarea>
       <br/>
       <button form="notes-form"
-        className='br2'
+        className='App__button'
         onClick={
           (e) => props.onAddNote(props.inputTitle, props.inputContent, e)}
       >

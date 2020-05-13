@@ -1,10 +1,8 @@
 import React, {useEffect} from 'react';
-import { connect } from 'react-redux';
-import * as actionTypes from '../store/constants';
 import NoteForm from '../components/NoteForm';
 import NotesDisplay from '../components/NotesDisplay';
 
-const Notes = (props) => {
+const Notes = () => {
   return(
     <div>
       <h1>Note-taking App</h1>

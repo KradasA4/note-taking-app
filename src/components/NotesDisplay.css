@@ -1,0 +1,11 @@
+.notes__display {
+  background-color: #f6fffe;
+  width: 70%;
+  margin: 1rem auto;
+  list-style: none;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+.notes__list {
+  padding: 1rem;
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import * as actionTypes from '../store/constants';
 import { connect } from 'react-redux';
+import './NotesDisplay.css';
 
 function NotesDisplay(props) {
 
@@ -15,27 +16,35 @@ function NotesDisplay(props) {
   return (
     <div>
       <h2>Notes</h2>        
+      <div>
+        <button 
+          // className="dib bg-lightest-blue ma2 pa2 b--light-blue br3-m"
+          className="App__button App__button--blue"
+          onClick={props.onSelectActive}
+        >
+          Show active notes
+        </button>
+        <button 
+        // className="dib bg-light-pink ma pa2 b--pink br3-m"
+          className="App__button App__button--red"
+          onClick={props.onSelectDeleted}
+        >
+          Show deleted notes
+        </button>
+      </div>
       <br/>
-      <button 
-        className="f6 link br1 ba bw1 ph3 pv2 mb2 dib bg-light-purple"
-        onClick={props.onSelectActive}
-      >
-        Show active notes
-      </button>
-      <button 
-      className="f6 link br1 ba bw1 ph3 pv2 mb2 dib bg-hot-pink"
-        onClick={props.onSelectDeleted}
-      >
-        Show deleted notes
-      </button>
-      <br/>
-      <ul>
+      <ul className="notes__display">
         {currentNotes().map((note) => {
           return (
-            <li>
-              {/* <span>ID: {note.id}</span><br/> */}
+            <li className="notes__list">
               <span>Title: {note.title}</span>
-              <button onClick={() => props.onDeleteNote(note.id)}>X</button>
+              <button
+                onClick={() => props.onDeleteNote(note.id)}
+                className="App__button--red"
+                // className="dib bg-light-pink ma2 pa b--pink br-l"
+              >
+                X
+              </button>
               <br/>
               <span>Content: {note.content}</span>
               <br/>
