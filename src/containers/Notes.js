@@ -6,30 +6,33 @@ const Notes = (props) => {
   return(
     <div>
       <h1>Note-taking App</h1>
-      <label htmlFor="note-title">Title: </label>
-      <input
-        type="text" 
-        id="note-title" 
-        onChange={(e) => props.onTitleChange(e.target.value)} 
-      />
-      <br/>
-      <label htmlFor="note-content">Content: </label>
-      <textarea 
-        name="note-content" 
-        id="note-content" 
-        cols="30" 
-        rows="10"
-        onChange={(e) => props.onContentChange(e.target.value)}
+      <form action="#" id="notes-form">
+        <label htmlFor="note-title">Title: </label>
+        <input
+          type="text" 
+          id="note-title" 
+          onChange={(e) => props.onTitleChange(e.target.value)} 
+        />
+        <br/>
+        <label htmlFor="note-content">Content: </label>
+        <textarea 
+          name="note-content" 
+          id="note-content" 
+          cols="30" 
+          rows="10"
+          required
+          onChange={(e) => props.onContentChange(e.target.value)}
+          >
+        </textarea>
+        <br/>
+        <button form="notes-form"
+          className='br2'
+          onClick={
+            (e) => props.onAddNote(props.inputTitle, props.inputContent, e)}
         >
-      </textarea>
-      <br/>
-      <button 
-        className='br2'
-        onClick={() => props.onAddNote(props.inputTitle, props.inputContent)}
-      >
-        add a note
-      </button>
-
+          add a note
+        </button>
+      </form>
       <hr/>
 
       <div>
@@ -42,6 +45,7 @@ const Notes = (props) => {
           {props.activeNotes.map((note) => {
             return (
               <li>
+                {/* <span>ID: {note.id}</span><br/> */}
                 <span>Title: {note.title}</span><br/>
                 <span>Content: {note.content}</span><br/>
                 <span>Date: {note.date}</span><br/>
@@ -65,7 +69,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onTitleChange: (title) => dispatch({type: actionTypes.TITLE_CHANGE, title: title}),
     onContentChange: (content) => dispatch({type: actionTypes.CONTENT_CHANGE, content: content}),
-    onAddNote: (title, content) => dispatch({type: actionTypes.ADD_NOTE, title: title, content: content})
+    onAddNote: (title, content, event) => dispatch({type: actionTypes.ADD_NOTE, title: title, content: content, event: event})
   }
 }
 
