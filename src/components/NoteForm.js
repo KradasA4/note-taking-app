@@ -1,6 +1,4 @@
 import React from 'react'
-import * as actionTypes from '../store/constants';
-import { connect } from 'react-redux';
 import './NoteForm.css';
 
 function NoteForm(props) {
@@ -10,6 +8,7 @@ function NoteForm(props) {
       <input
         type="text" 
         id="note-title" 
+        placeholder="What's hte matter?"
         onChange={(e) => props.onTitleChange(e.target.value)} 
         className="form__input"
       />
@@ -20,6 +19,7 @@ function NoteForm(props) {
         id="note-content" 
         cols="30" 
         rows="10"
+        placeholder="Jot down any details here"
         required
         onChange={(e) => props.onContentChange(e.target.value)}
         className="form__input"
@@ -37,17 +37,17 @@ function NoteForm(props) {
   )
 }
 
-const mapStateToProps = state => ({
-  inputTitle: state.inputs.inputTitle,
-  inputContent: state.inputs.inputContent,
-})
+// const mapStateToProps = state => ({
+//   inputTitle: state.inputs.inputTitle,
+//   inputContent: state.inputs.inputContent,
+// })
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onTitleChange: (title) => dispatch({type: actionTypes.TITLE_CHANGE, title: title}),
-    onContentChange: (content) => dispatch({type: actionTypes.CONTENT_CHANGE, content: content}),
-    onAddNote: (title, content, event) => dispatch({type: actionTypes.ADD_NOTE, title: title, content: content, event: event}),
-  }
-}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     onTitleChange: (title) => dispatch({type: actionTypes.TITLE_CHANGE, title: title}),
+//     onContentChange: (content) => dispatch({type: actionTypes.CONTENT_CHANGE, content: content}),
+//     onAddNote: (title, content, event) => dispatch({type: actionTypes.ADD_NOTE, title: title, content: content, event: event}),
+//   }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NoteForm);
+export default NoteForm;

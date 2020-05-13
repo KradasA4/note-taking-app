@@ -1,6 +1,4 @@
 import React from 'react'
-import * as actionTypes from '../store/constants';
-import { connect } from 'react-redux';
 import './NotesDisplay.css';
 
 function NotesDisplay(props) {
@@ -58,18 +56,18 @@ function NotesDisplay(props) {
   )
 }
 
-const mapStateToProps = state => ({
-  activeNotes: state.notes.activeNotes,
-  deletedNotes: state.notes.deletedNotes,
-  currentNotes: state.notes.currentNotes
-})
+// const mapStateToProps = state => ({
+//   activeNotes: state.notes.activeNotes,
+//   deletedNotes: state.notes.deletedNotes,
+//   currentNotes: state.notes.currentNotes
+// })
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onDeleteNote: (id) => dispatch({type: actionTypes.DELETE_NOTE, targetId: id}),
-    onSelectActive: () => dispatch({type: actionTypes.SELECT_ACTIVE_NOTES}),
-    onSelectDeleted: () => dispatch({type: actionTypes.SELECT_DELETED_NOTES})
-  }
-}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     onDeleteNote: (id) => dispatch({type: actionTypes.DELETE_NOTE, targetId: id}),
+//     onSelectActive: () => dispatch({type: actionTypes.SELECT_ACTIVE_NOTES}),
+//     onSelectDeleted: () => dispatch({type: actionTypes.SELECT_DELETED_NOTES})
+//   }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NotesDisplay);
+export default NotesDisplay;
