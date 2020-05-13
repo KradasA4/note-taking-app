@@ -13,9 +13,10 @@ function NotesDisplay(props) {
 
   let focusBlueButton;
   let focusRedButton;
-  props.currentNotes === 'activeNotes' ? focusBlueButton = 'App__button--focusBlue' : focusBlueButton = ''
+
+  (props.currentNotes === 'activeNotes' || props.currentNotes === '') ? focusBlueButton = 'App__button--focusBlue' : focusBlueButton = ''
   props.currentNotes === 'deletedNotes' ? focusRedButton = 'App__button--focusRed' : focusRedButton = ''
-  
+
   return (
     <div>
       <h2>Notes</h2>        
@@ -43,7 +44,7 @@ function NotesDisplay(props) {
               <span>Title: {note.title}</span>
               <button
                 onClick={() => props.onDeleteNote(note.id)}
-                className="App__button--red"
+                className="App__button--small App__button--red "
                 // className="dib bg-light-pink ma2 pa b--pink br-l"
               >
                 X
