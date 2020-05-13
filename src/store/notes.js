@@ -24,7 +24,10 @@ const reducer = (state=initialState, action) => {
             }
           ],
         }
+      } else {
+        return { ...state }
       }
+
     case actionTypes.DELETE_NOTE:
       const updatedActiveNotes = state.activeNotes.filter((note) => {
         return note.id !== action.targetId
