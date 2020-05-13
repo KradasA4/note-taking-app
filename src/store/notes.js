@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 const initialState = {
   activeNotes: [],
   deletedNotes: [],
-  currentNotes: []
+  currentNotes: ''
 }
 
 const reducer = (state=initialState, action) => {
@@ -39,18 +39,17 @@ const reducer = (state=initialState, action) => {
           ...state.deletedNotes,
           deletedNote[0]
         ],
-        // currentNotes: updatedActiveNotes
       }
     
     case actionTypes.SELECT_ACTIVE_NOTES:
       return {
         ...state,
-        currentNotes: state.activeNotes,
+        currentNotes: 'activeNotes',
       }
     case actionTypes.SELECT_DELETED_NOTES:
       return {
         ...state,
-        currentNotes: state.deletedNotes
+        currentNotes: 'deletedNotes'
       }
     default:
       return state;

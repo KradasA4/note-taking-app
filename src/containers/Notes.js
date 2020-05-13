@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import * as actionTypes from '../store/constants';
 import { act } from 'react-dom/test-utils';
 
 const Notes = (props) => {
-  
+
+  const notesDisplay = () => {
+    if(props.currentNotes === 'deletedNotes') {
+      return props.deletedNotes;
+    } else {
+      return props.activeNotes;
+    }
+  }
+
   return(
     <div>
       <h1>Note-taking App</h1>
@@ -47,9 +55,7 @@ const Notes = (props) => {
         <button onClick={props.onSelectDeleted}>Shot deleted notes</button>
         <br/>
         <ul>
-          {
-          
-          props.currentNotes.map((note) => {
+          {notesDisplay().map((note) => {
             return (
               <li>
                 {/* <span>ID: {note.id}</span><br/> */}
