@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import './index.css';
-import rootReducer from './store/reducers';
+import inputsReducer from './store/inputs';
+import notesReducer from './store/notes';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+const rootReducer = combineReducers({
+  inputs: inputsReducer,
+  notes: notesReducer
+})
 
 const logger = createLogger();
 
