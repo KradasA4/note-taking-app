@@ -14,20 +14,31 @@
   border-color: #B9E9FF;
 }
 
-.App__button--blue:focus {
+.App__button--focusBlue {
   background-color: #acc9ff;
   border-color: #8bb3fd;
   outline: 2px solid #7fd7ff
 }
+
+/* .App__button--blue:focus {
+  background-color: #acc9ff;
+  border-color: #8bb3fd;
+  outline: 2px solid #7fd7ff
+} */
 
 .App__button--red {
   background-color: #FDDFDF;
   border-color: #FFA1A1;
 }
 
-.App__button--red:focus {
+.App__button--focusRed {
   background-color: #FFA1A1;
   border-color: #FFA1A1;
   outline: 2px solid #ff7e7e;
 }
 
+/* .App__button--red:focus {
+  background-color: #FFA1A1;
+  border-color: #FFA1A1;
+  outline: 2px solid #ff7e7e;
+} */
