@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
 import * as actionTypes from '../store/constants';
-import { act } from 'react-dom/test-utils';
 
 const Notes = (props) => {
 

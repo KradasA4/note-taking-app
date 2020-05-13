@@ -32,13 +32,21 @@ const reducer = (state=initialState, action) => {
       const deletedNote = state.activeNotes.filter((note) => {
         return note.id === action.targetId
       })
-      return {
-        ...state,
-        activeNotes: updatedActiveNotes,
-        deletedNotes: [
-          ...state.deletedNotes,
-          deletedNote[0]
-        ],
+
+      if(state.currentNotes === 'activeNotes') {
+        return {
+          ...state,
+          activeNotes: updatedActiveNotes,
+          deletedNotes: [
+            ...state.deletedNotes,
+            deletedNote[0]
+          ],
+        }
+      } else if (state.currentNotes === 'deletedNotes') {
+        alert("The notes's already been deleted")
+        return {
+          ...state
+        }
       }
     
     case actionTypes.SELECT_ACTIVE_NOTES:
