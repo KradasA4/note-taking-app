@@ -1,3 +1,7 @@
+/* #notes-form {
+  display:  flex;
+} */
+
 .form__input {
   width: 30%;
   margin: 0.5rem;

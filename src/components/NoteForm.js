@@ -8,7 +8,7 @@ function NoteForm(props) {
       <input
         type="text" 
         id="note-title" 
-        placeholder="What's hte matter?"
+        placeholder="What's the matter?"
         onChange={(e) => props.onTitleChange(e.target.value)} 
         className="form__input"
       />
