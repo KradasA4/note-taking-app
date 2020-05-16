@@ -3,29 +3,29 @@ import './NoteForm.css';
 
 function NoteForm(props) {
   return (
-    <form action="#" id="notes-form">
-      <label htmlFor="note-title">Title: </label><br/>
+    <form action="#" id="notes-form" className="notes-form">
+      <label htmlFor="note-title">Title: </label>
       <input
         type="text" 
         id="note-title" 
         placeholder="What's the matter?"
         onChange={(e) => props.onTitleChange(e.target.value)} 
-        className="form__input"
+        className="notes-form__input"
       />
-      <br/>
-      <label htmlFor="note-content">Content: </label><br/>
+
+      <label htmlFor="note-content">Content: </label>
       <textarea 
         name="note-content" 
         id="note-content" 
         cols="30" 
-        rows="10"
+        rows="15"
         placeholder="Jot down any details here"
         required
         onChange={(e) => props.onContentChange(e.target.value)}
-        className="form__input"
+        className="notes-form__input"
         >
       </textarea>
-      <br/>
+
       <button form="notes-form"
         className='App__button'
         onClick={

@@ -1,11 +1,41 @@
-/* #notes-form {
-  display:  flex;
-} */
-
-.form__input {
+#notes-form {
+  display:  grid;
+  grid-template-columns: auto 3fr;
+  grid-template-rows: auto 1fr auto;
   width: 30%;
-  margin: 0.5rem;
-  border-radius: 5px;
-  resize: none;
-  padding: 0.25rem;
+  margin: auto;
 }
+
+#notes-form label {
+  justify-self: end;
+}
+
+#notes-form input,
+#notes-form textarea {
+  justify-self: end;
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  border-radius: 5px;
+  padding: 0.25rem;
+  width: 90%;
+  border: 2px solid black;
+  resize: none;
+}
+
+#notes-form button {
+  grid-column: 1 / span 2 ;
+  justify-self: center;
+  width: 7rem;
+  height: 2.5rem;
+}
+
+@media only screen and (max-width: 480px){ 
+	#notes-form {
+    width: 90%;
+  }
+} 
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) { 
+	#notes-form {
+    width: 70%;
+  }
+} 

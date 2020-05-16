@@ -8,6 +8,7 @@
   margin: 0.5rem;
   cursor: pointer;
   outline: 0;
+  border-radius: 0.5rem;
 }
 
 .App__button--small {
@@ -24,7 +25,11 @@
 .App__button--focusBlue {
   background-color: #acc9ff;
   border-color: #8bb3fd;
-  outline: 2px solid #7fd7ff
+  /* outline: 2px solid #7fd7ff; */
+  outline: 0;
+  box-shadow: 0 0 3pt 2pt #7fd7ff;
+  /* border: 2px solid #8bb3fd */
+  
 }
 
 /* .App__button--blue:focus {
@@ -41,7 +46,9 @@
 .App__button--focusRed {
   background-color: #FFA1A1;
   border-color: #FFA1A1;
-  outline: 2px solid #ff7e7e;
+  /* outline: 2px solid #ff7e7e; */
+  outline: 0;
+  box-shadow: 0 0 3pt 2pt #ff7e7e;;
 }
 
 /* .App__button--red:focus {

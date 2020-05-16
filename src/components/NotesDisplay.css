@@ -1,6 +1,6 @@
 .notes__display {
   background-color: #f6fffe;
-  width: 70%;
+  width: 50%;
   margin: 1rem auto;
   list-style: none;
   text-align: center;
@@ -9,3 +9,16 @@
 .notes__list {
   padding: 1rem;
 }
+
+
+@media only screen and (max-width: 480px){ 
+	.notes__display {
+    width: 80%;
+  }
+} 
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) { 
+	.notes__display {
+    width: 70%;
+  }
+} 
