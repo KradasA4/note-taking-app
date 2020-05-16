@@ -8,6 +8,8 @@ import inputsReducer from './store/inputs';
 import notesReducer from './store/notes';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { saveState, loadState } from './store/storeServices';
+
 
 const rootReducer = combineReducers({
   inputs: inputsReducer,
@@ -15,8 +17,13 @@ const rootReducer = combineReducers({
 })
 
 const logger = createLogger();
+const persistState = loadState();
 
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(rootReducer, persistState, applyMiddleware(logger));
+
+store.subscribe(() => {
+  saveState(store.getState());
+})
 
 ReactDOM.render(
   <React.StrictMode>
