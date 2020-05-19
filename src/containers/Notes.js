@@ -15,6 +15,8 @@ const Notes = (props) => {
         onTitleChange={props.onTitleChange}
         onContentChange={props.onContentChange}
         onAddNote={props.onAddNote}
+
+        onAddNoteThenClearInput={props.onAddNoteThenClearInput}
         />
       <hr/>
       <NotesDisplay props={props} 
@@ -44,7 +46,9 @@ const mapDispatchToProps = dispatch => {
     onAddNote: (title, content, event) => dispatch(actionCreators.addNote(title, content, event)),
     onDeleteNote: (id) => dispatch(actionCreators.deleteNote(id)),
     onSelectActive: () => dispatch(actionCreators.selectActive()),
-    onSelectDeleted: () => dispatch(actionCreators.selectDeleted())
+    onSelectDeleted: () => dispatch(actionCreators.selectDeleted()),
+
+    onAddNoteThenClearInput: (title, content, event) => dispatch(actionCreators.addNoteThenClearInput(title, content, event))
   }
 }
 

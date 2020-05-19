@@ -3,12 +3,13 @@ import './NoteForm.css';
 
 function NoteForm(props) {
   return (
-    <form action="#" id="notes-form" className="notes-form">
+    <form id="notes-form" className="notes-form">
       <label htmlFor="note-title">Title: </label>
       <input
         type="text" 
         id="note-title" 
         placeholder="What's the matter?"
+        value={props.inputTitle}
         onChange={(e) => props.onTitleChange(e.target.value)} 
         className="notes-form__input"
       />
@@ -20,6 +21,7 @@ function NoteForm(props) {
         cols="30" 
         rows="15"
         placeholder="Jot down any details here"
+        value={props.inputContent}
         required
         onChange={(e) => props.onContentChange(e.target.value)}
         className="notes-form__input"
@@ -28,7 +30,7 @@ function NoteForm(props) {
 
       <button form="notes-form"
         className='App__button'
-        onClick={(e) => props.onAddNote(props.inputTitle, props.inputContent, e)}
+        onClick={(e) => props.onAddNoteThenClearInput(props.inputTitle, props.inputContent, e)}
       >
         add a note
       </button>
