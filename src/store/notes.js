@@ -15,13 +15,13 @@ const reducer = (state=initialState, action) => {
         return {
           ...state,
           activeNotes: [ 
-            ...state.activeNotes,
             {
               id: uuidv4(),
               title: action.title,
               content: action.content,
               date: new Date().toLocaleString() 
-            }
+            },
+            ...state.activeNotes,
           ],
         }
       } else {
