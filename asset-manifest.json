@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/redux-note-taking-app/static/css/main.ae42c34c.chunk.css",
+    "main.js": "/redux-note-taking-app/static/js/main.999aec30.chunk.js",
+    "main.js.map": "/redux-note-taking-app/static/js/main.999aec30.chunk.js.map",
+    "runtime-main.js": "/redux-note-taking-app/static/js/runtime-main.f1f131a0.js",
+    "runtime-main.js.map": "/redux-note-taking-app/static/js/runtime-main.f1f131a0.js.map",
+    "static/js/2.7e027a65.chunk.js": "/redux-note-taking-app/static/js/2.7e027a65.chunk.js",
+    "static/js/2.7e027a65.chunk.js.map": "/redux-note-taking-app/static/js/2.7e027a65.chunk.js.map",
+    "index.html": "/redux-note-taking-app/index.html",
+    "precache-manifest.32424b1e426f0f70ba356cad1aad4e16.js": "/redux-note-taking-app/precache-manifest.32424b1e426f0f70ba356cad1aad4e16.js",
+    "service-worker.js": "/redux-note-taking-app/service-worker.js",
+    "static/css/main.ae42c34c.chunk.css.map": "/redux-note-taking-app/static/css/main.ae42c34c.chunk.css.map",
+    "static/js/2.7e027a65.chunk.js.LICENSE.txt": "/redux-note-taking-app/static/js/2.7e027a65.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f1f131a0.js",
+    "static/js/2.7e027a65.chunk.js",
+    "static/css/main.ae42c34c.chunk.css",
+    "static/js/main.999aec30.chunk.js"
+  ]
+}
