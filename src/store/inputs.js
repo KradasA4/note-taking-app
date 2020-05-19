@@ -17,6 +17,12 @@ const reducer = (state=initialState, action) => {
         ...state,
         inputContent: action.content
       }
+    case actionTypes.CLEAR_INPUT:
+      return {
+        ...state,
+        inputTitle: '',
+        inputContent: ''
+      }
     default:
       return state;
   }

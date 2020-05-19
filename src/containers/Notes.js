@@ -3,6 +3,7 @@ import NoteForm from '../components/NoteForm';
 import NotesDisplay from '../components/NotesDisplay';
 import { connect } from 'react-redux';
 import * as actionTypes from '../store/constants';
+import * as actionCreators from '../store/actions';
 
 const Notes = (props) => {
   return(
@@ -38,12 +39,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    onTitleChange: (title) => dispatch({type: actionTypes.TITLE_CHANGE, title: title}),
-    onContentChange: (content) => dispatch({type: actionTypes.CONTENT_CHANGE, content: content}),
-    onAddNote: (title, content, event) => dispatch({type: actionTypes.ADD_NOTE, title: title, content: content, event: event}),
-    onDeleteNote: (id) => dispatch({type: actionTypes.DELETE_NOTE, targetId: id}),
-    onSelectActive: () => dispatch({type: actionTypes.SELECT_ACTIVE_NOTES}),
-    onSelectDeleted: () => dispatch({type: actionTypes.SELECT_DELETED_NOTES})
+    onTitleChange: (title) => dispatch(actionCreators.titleChange(title)),
+    onContentChange: (content) => dispatch(actionCreators.contentChange(content)),
+    onAddNote: (title, content, event) => dispatch(actionCreators.addNote(title, content, event)),
+    onDeleteNote: (id) => dispatch(actionCreators.deleteNote(id)),
+    onSelectActive: () => dispatch(actionCreators.selectActive()),
+    onSelectDeleted: () => dispatch(actionCreators.selectDeleted())
   }
 }
 

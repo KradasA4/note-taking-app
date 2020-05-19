@@ -9,7 +9,7 @@ import notesReducer from './store/notes';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { saveState, loadState } from './store/storeServices';
-
+import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
   inputs: inputsReducer,
@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
 const logger = createLogger();
 const persistState = loadState();
 
-const store = createStore(rootReducer, persistState, applyMiddleware(logger));
+const store = createStore(rootReducer, persistState, applyMiddleware(thunk, logger));
 
 store.subscribe(() => {
   saveState(store.getState());

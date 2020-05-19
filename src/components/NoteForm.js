@@ -28,8 +28,7 @@ function NoteForm(props) {
 
       <button form="notes-form"
         className='App__button'
-        onClick={
-          (e) => props.onAddNote(props.inputTitle, props.inputContent, e)}
+        onClick={(e) => props.onAddNote(props.inputTitle, props.inputContent, e)}
       >
         add a note
       </button>
